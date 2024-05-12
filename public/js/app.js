@@ -35,8 +35,11 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 messageOne.textContent = data.error
             } else {
-                messageOne.textContent = data.forecast.location.name
-                messageTwo.textContent = data.forecast.current.feelslike_c + 'C'
+                messageOne.textContent = data.forecast.location.name + ', ' + data.forecast.location.country
+                messageTwo.textContent = data.forecast.current.condition.text + '. It is currently ' 
+                + data.forecast.current.temp_c + 'C degree out.' + ' It feels like ' 
+                + data.forecast.current.feelslike_c + 'C degree out. The humidity is ' 
+                + data.forecast.current.humidity + '%.'
             }
         })
     })
